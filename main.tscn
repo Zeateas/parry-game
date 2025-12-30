@@ -28,7 +28,7 @@ position = Vector2(576, 600)
 shape = SubResource("WorldBoundaryShape2D_ig7tw")
 
 [node name="Line2D" type="Line2D" parent="TempArena/Floor"]
-points = PackedVector2Array(-576, 0, 576, 0)
+points = PackedVector2Array(-528, 0, 529, 0)
 width = 2.0
 
 [node name="Ceiling" type="StaticBody2D" parent="TempArena"]
@@ -39,7 +39,29 @@ rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_ig7tw")
 
 [node name="Line2D" type="Line2D" parent="TempArena/Ceiling"]
-points = PackedVector2Array(-576, 0, 576, 0)
+points = PackedVector2Array(-528, -0.00133896, 529, 0.00134277)
+width = 2.0
+
+[node name="RightWall" type="StaticBody2D" parent="TempArena"]
+position = Vector2(48, 320)
+rotation = 1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TempArena/RightWall"]
+shape = SubResource("WorldBoundaryShape2D_ig7tw")
+
+[node name="Line2D" type="Line2D" parent="TempArena/RightWall"]
+points = PackedVector2Array(-272, -0.000602722, 281, 0.00062561)
+width = 2.0
+
+[node name="LeftWall" type="StaticBody2D" parent="TempArena"]
+position = Vector2(1104, 328)
+rotation = -1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TempArena/LeftWall"]
+shape = SubResource("WorldBoundaryShape2D_ig7tw")
+
+[node name="Line2D" type="Line2D" parent="TempArena/LeftWall"]
+points = PackedVector2Array(-272, -0.000602722, 281, 0.00062561)
 width = 2.0
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
