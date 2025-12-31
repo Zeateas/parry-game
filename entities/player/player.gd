@@ -50,9 +50,9 @@ func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("move_left", "move_right")
 
 	# Transition states
-	if Input.is_action_just_pressed("attack") and can_attack:
+	if Input.is_action_pressed("attack") and can_attack:
 		current_state = State.ATTACKED
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	elif Input.is_action_just_pressed("jump") and is_on_floor():
 		current_state = State.JUMPED
 	elif direction != 0.0:
 		current_state = State.MOVING
@@ -60,9 +60,6 @@ func _physics_process(delta: float) -> void:
 		current_state = State.IDLE
 
 	move_and_slide()
-
-	if current_state == State.ATTACKED:
-		print("atack")
 
 
 func _initialize_weapon() -> void:
@@ -88,7 +85,7 @@ func _process_attacked() -> void:
 	can_attack = false
 	attack_timer.start()
 	weapon.attack(weapon_dir)
-	weapon.node_ref = self
+	weapon.player = self
 
 
 func _process_parry() -> void:
