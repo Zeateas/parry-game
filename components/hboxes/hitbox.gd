@@ -15,10 +15,12 @@ var damage: float = 0.0 ## Inherited from weapon/entity parent, probably
 func _ready() -> void:
 	damage = actor.damage
 
-	if not is_connected("_on_area_entered", Callable(self, "_on_hurtbox_entered")):
-		connect("_on_area_entered", Callable(self, "_on_hurtbox_entered"))
+	if not area_entered.is_connected(Callable(self, "_on_hitbox_entered")):
+		area_entered.connect(Callable(self, "_on_hitbox_entered"))
 
 
-func _on_hurtbox_entered(hurtbox: Hurtbox) -> void:
-	print("%s sent damage" % actor.name)
+func _on_hitbox_entered(hurtbox: Hurtbox) -> void:
+	#if hurtbox.actor == 
+
 	hurtbox.apply_damage(damage)
+	actor.queue_free() # Delete from scene for projectiles and stuff, idk

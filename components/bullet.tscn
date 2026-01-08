@@ -20,8 +20,9 @@ script = ExtResource("1_omyih")
 scale = Vector2(0.0625, 0.0625)
 texture = SubResource("GradientTexture2D_lsas8")
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("1_jdofu")
+actor = NodePath("..")
 metadata/_custom_type_script = "uid://ypd7coflk64r"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]

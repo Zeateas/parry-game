@@ -7,7 +7,7 @@ class_name Entity extends CharacterBody2D
 @export var health: float = 100.0 ## Entity health
 
 # Still unsure whether or not to have enemies carry set or semi-randomized weapons (excluding bosses)
-@export var weapon: Weapon = null ## Equipped weapon
+@export var weapon: WeaponInformation = null ## Equipped weapon
 
 @export_group("Speed Parameters")
 @export var move_speed: float = 400.0 ## Directional (x) movement speed
@@ -45,5 +45,5 @@ func hit(points: float) -> void:
 
 
 func die() -> void:
-	#queue_free()
-	pass
+	queue_free()
+	#passd

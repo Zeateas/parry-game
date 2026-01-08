@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dybs74ygojbd5" path="res://entities/player/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://bbt4ssn8r0q1s" path="res://components/hboxes/hurtbox.tscn" id="2_abrql"]
-[ext_resource type="Script" uid="uid://dkrcdpmn67x81" path="res://resources/weapons/weapon.gd" id="2_sglur"]
+[ext_resource type="Script" uid="uid://dkrcdpmn67x81" path="res://weapons/weapon_info.gd" id="2_sglur"]
 [ext_resource type="Texture2D" uid="uid://dy0vb6m8u7ffc" path="res://assets/player/monarch-idle.png" id="3_bls4j"]
 
 [sub_resource type="Gradient" id="Gradient_hc03v"]
