@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b844wuksw7b08"]
+
+[ext_resource type="Script" uid="uid://cwkervv2kjjqj" path="res://weapons/ranged/gun_test.gd" id="1_i7olm"]
+
+[node name="GunTest" type="Sprite2D"]
+script = ExtResource("1_i7olm")
+metadata/_custom_type_script = "uid://dxccofyaol54x"

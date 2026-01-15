@@ -1,25 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dryknuknadsl7"]
+[gd_scene load_steps=4 format=3 uid="uid://dryknuknadsl7"]
 
 [ext_resource type="PackedScene" uid="uid://ca5ysa77v7rxt" path="res://entities/player/player.tscn" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://bsfswaibudqrc" path="res://weapons/resources/gun_test.gd" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cflw0exn7ewr5" path="res://entities/enemy/enemy.tscn" id="3_h2yge"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ig7tw"]
-
-[sub_resource type="Gradient" id="Gradient_0xm2m"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_h2yge"]
-gradient = SubResource("Gradient_0xm2m")
-fill_from = Vector2(0, 1)
-
-[sub_resource type="Resource" id="Resource_h2yge"]
-script = ExtResource("2_0xm2m")
-name = "Guntest"
-sprite = SubResource("GradientTexture2D_h2yge")
-damage = 1.5
-attack_speed = 0.1
-metadata/_custom_type_script = "uid://bsfswaibudqrc"
 
 [node name="Main" type="Node2D"]
 
@@ -84,7 +68,6 @@ width = 2.0
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(576, 324)
 weapon_pos_distance = 25.0
-weapon = SubResource("Resource_h2yge")
 damage = 5.0
 
 [node name="Enemy" parent="." instance=ExtResource("3_h2yge")]

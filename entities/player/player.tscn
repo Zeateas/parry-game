@@ -1,30 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://ca5ysa77v7rxt"]
+[gd_scene load_steps=12 format=3 uid="uid://ca5ysa77v7rxt"]
 
 [ext_resource type="Script" uid="uid://dybs74ygojbd5" path="res://entities/player/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://bbt4ssn8r0q1s" path="res://components/hboxes/hurtbox.tscn" id="2_abrql"]
-[ext_resource type="Script" uid="uid://dkrcdpmn67x81" path="res://weapons/weapon_info.gd" id="2_sglur"]
+[ext_resource type="Script" uid="uid://cwkervv2kjjqj" path="res://weapons/ranged/gun_test.gd" id="2_bls4j"]
 [ext_resource type="Texture2D" uid="uid://dy0vb6m8u7ffc" path="res://assets/player/monarch-idle.png" id="3_bls4j"]
-
-[sub_resource type="Gradient" id="Gradient_hc03v"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_0lwar"]
-gradient = SubResource("Gradient_hc03v")
-fill_from = Vector2(0.0123457, 1)
-
-[sub_resource type="Resource" id="Resource_bls4j"]
-script = ExtResource("2_sglur")
-name = "Gun Test"
-sprite = SubResource("GradientTexture2D_0lwar")
-damage = 0.0
-attack_speed = 0.0
-metadata/_custom_type_script = "uid://dkrcdpmn67x81"
-
-[sub_resource type="Gradient" id="Gradient_sglur"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_bls4j"]
-gradient = SubResource("Gradient_sglur")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(32, 32)
@@ -100,15 +79,13 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
-weapon = SubResource("Resource_bls4j")
-
-[node name="WeaponSprite" type="Sprite2D" parent="."]
-position = Vector2(32, 0)
-scale = Vector2(0.125, 0.125)
-texture = SubResource("GradientTexture2D_bls4j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_g2els")
+
+[node name="GunTest" type="Sprite2D" parent="."]
+script = ExtResource("2_bls4j")
+metadata/_custom_type_script = "uid://cwkervv2kjjqj"
 
 [node name="Hurtbox" parent="." node_paths=PackedStringArray("actor") instance=ExtResource("2_abrql")]
 actor = NodePath("..")
