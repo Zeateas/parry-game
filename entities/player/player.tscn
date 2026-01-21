@@ -80,7 +80,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
-immunity_frames = 2.0
+immunity_frames = 0.35
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_g2els")
@@ -100,6 +100,5 @@ frame_progress = 0.528932
 [node name="RangedWeapon" type="Sprite2D" parent="."]
 script = ExtResource("4_bls4j")
 projectile_scene = ExtResource("5_fkugw")
-damage = 5.0
 attack_speed = 0.5
 metadata/_custom_type_script = "uid://b6nqc8i2ex3n5"

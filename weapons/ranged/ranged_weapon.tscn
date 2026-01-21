@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://diq2suoofgxnj"]
+[gd_scene load_steps=4 format=3 uid="uid://diq2suoofgxnj"]
 
 [ext_resource type="PackedScene" uid="uid://uqdv2bd2k762" path="res://weapons/weapon.tscn" id="1_jie88"]
 [ext_resource type="Script" uid="uid://b6nqc8i2ex3n5" path="res://weapons/ranged/ranged_weapon.gd" id="2_i2rgu"]
 
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fqdiy"]
+width = 16
+height = 16
+fill_from = Vector2(0, 1)
+
 [node name="RangedWeapon" instance=ExtResource("1_jie88")]
 script = ExtResource("2_i2rgu")
 projectile_scene = null
+weapon_sprite = SubResource("GradientTexture2D_fqdiy")

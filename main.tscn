@@ -68,6 +68,7 @@ width = 2.0
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(576, 324)
 weapon_pos_distance = 25.0
+immunity_frames = 0.15
 damage = 5.0
 
 [node name="Enemy1" parent="." instance=ExtResource("3_h2yge")]

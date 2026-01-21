@@ -136,10 +136,8 @@ func _process_parry() -> void:
 
 
 func _weapon_sprite_rotation() -> void:
-	mouse_pos = get_global_mouse_position()
-
 	# Sets weapon_sprite position to be around the player at weapon_pos_distance
-	weapon_dir = (mouse_pos - global_position).normalized() * weapon_pos_distance
+	weapon_dir = (get_global_mouse_position() - global_position).normalized() * weapon_pos_distance
 	weapon.position = weapon_dir
 
 

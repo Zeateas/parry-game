@@ -48,7 +48,7 @@ func _physics_process(delta: float) -> void:
 
 func hit(points: float) -> void:
 	if _immunity_frames_active():
-		print("%s: Haha can't hit me, I have %.2fsec i-frames left" % [name, immunity_frames - time_since_last_hit])
+		#print("%s: Haha can't hit me, I have %.2fsec i-frames left" % [name, immunity_frames - time_since_last_hit])
 		return
 
 	health -= points

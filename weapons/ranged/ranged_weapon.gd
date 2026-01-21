@@ -8,6 +8,7 @@ var projectiles_group: Node2D = null
 
 
 func _ready() -> void:
+	super()
 	if projectiles_group == null:
 		projectiles_group = get_tree().get_first_node_in_group("ProjectilesGroup")
 		if projectiles_group == null:
@@ -16,6 +17,10 @@ func _ready() -> void:
 
 
 func attack() -> void:
+	_shoot()
+
+
+func _shoot() -> void:
 	if projectile_scene == null:
 		print("projectile_scene is null (res://weapons/ranged/ranged_weapon.gd)")
 		return
@@ -29,4 +34,7 @@ func attack() -> void:
 
 	projectile.global_position = actor.global_position
 
-	projectiles_group.add_child(projectile)
+	if projectiles_group != null:
+		projectiles_group.add_child(projectile)
+	else:
+		get_tree().root.get_child(0).add_child(projectile) # Adds to main scene root node I think
